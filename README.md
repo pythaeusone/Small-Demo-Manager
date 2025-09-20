@@ -2,6 +2,8 @@
 
 This is a new version of the "[CS2-SourceTV-Demo-Voice-Calculator](https://github.com/pythaeusone/CS2-SourceTV-Demo-Voice-Calculator)"
 
+[![Get it from Microsoft](https://get.microsoft.com/images/en-us%20dark.svg)](https://apps.microsoft.com/detail/9nkbsbk8rtwp?cid=DevShareMCLPCB)
+
 ---
 
 > [!IMPORTANT]
