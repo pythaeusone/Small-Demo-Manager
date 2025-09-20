@@ -1,13 +1,20 @@
-<img width="998" height="496" alt="grafik" src="https://github.com/user-attachments/assets/e898f93c-6650-4311-87ac-8d761ce20ff3" />
-
-
-
-
 # 🎧 Small Demo Manager 
 
 This is a new version of the "[CS2-SourceTV-Demo-Voice-Calculator](https://github.com/pythaeusone/CS2-SourceTV-Demo-Voice-Calculator)"
 
 ---
+
+> [!IMPORTANT]
+> It often happens that Valve changes the demo structure with a CS2 update.
+> 
+> The parser then needs to be updated, and updates take over three days to be released in the MS Store.
+
+---
+
+<img width="998" height="496" alt="grafik" src="https://github.com/user-attachments/assets/e898f93c-6650-4311-87ac-8d761ce20ff3" />
+
+
+
 
 ## ⚙️ Runtime Requirements
 
