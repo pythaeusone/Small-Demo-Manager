@@ -1,22 +1,22 @@
-<img width="823" height="393" alt="grafik" src="https://github.com/user-attachments/assets/1a454da6-a50e-4f75-b1ce-e6cd8dec6bf2" />
+# 🎧 Small Demo Manager 
 
+This is a new version of the "[CS2-SourceTV-Demo-Voice-Calculator](https://github.com/pythaeusone/CS2-SourceTV-Demo-Voice-Calculator)"
 
-
-
-
-# 🎧 CS2 SourceTV Demo Voice Audio Bitfield Calculator incl. Updater
-
-Hello dear Counter-Strike friends,  
-my name is Musti, also known as **Pythaeus**.
-
-I created this software to make it easier to listen to players in SourceTV(Faceit,ESEA ...) demos.  
-I was inspired by the YouTuber **[@KEROVSKI](https://www.youtube.com/@KEROVSKI_)** and his tool — so I decided to build something even better. 😉
-
-For reading demo files, I used the **[DemoFile](https://www.nuget.org/packages/DemoFile/)** library, which requires several additional dependencies (linked below).
-
-ps: I always scan with Virus-Total and hybrid-analysis, some Windows systems complain because I don't include a certificate.
+[![Get it from Microsoft](https://get.microsoft.com/images/en-us%20dark.svg)](https://apps.microsoft.com/detail/9nkbsbk8rtwp?cid=DevShareMCLPCB)
 
 ---
+
+> [!IMPORTANT]
+> It often happens that Valve changes the demo structure with a CS2 update.
+> 
+> The parser then needs to be updated, and updates take over three days to be released in the MS Store.
+
+---
+
+<img width="998" height="496" alt="grafik" src="https://github.com/user-attachments/assets/e898f93c-6650-4311-87ac-8d761ce20ff3" />
+
+
+
 
 ## ⚙️ Runtime Requirements
 
@@ -30,23 +30,18 @@ If the application does not start, make sure this runtime is installed.
 ## 🙏 Special Thanks
 
 Huge thanks to the following awesome people for testing and feedback:
-
-- **_starbaek_05**
-- **WaZaRo**
 - **KEROVSKI**
 - **Throw from cswatch.in Discord**
-- and everyone else from the **ChiefKinzo Discord**!
+- and everyone else :)
 
 ---
 
 ## 🔗 Project and Community Links
 
-- **GitHub project**: [https://github.com/pythaeusone/CS2-SourceTV-Demo-Voice-Calculator](https://github.com/pythaeusone/CS2-SourceTV-Demo-Voice-Calculator)
+- **GitHub project**: [https://github.com/pythaeusone/Small-Demo-Manager](https://github.com/pythaeusone/Small-Demo-Manager)
 
 ### 🎮 Community
 
-- **ChiefKinzo Discord**: [https://discord.gg/efFgHNHxS6](https://discord.gg/efFgHNHxS6)  
-- **ChiefKinzo YouTube**: [https://www.youtube.com/@Chiefkinzo](https://www.youtube.com/@Chiefkinzo)
 - **Kerovski Discord**: [https://discord.gg/n26tH9565K](https://discord.gg/n26tH9565K)
 - **@KEROVSKI's Tool Video**: [https://www.youtube.com/watch?v=7vsrbD3xBwM](https://www.youtube.com/watch?v=7vsrbD3xBwM)
 
@@ -56,12 +51,13 @@ Huge thanks to the following awesome people for testing and feedback:
 
 ## 📦 Used Libraries
 
-- [DemoFile](https://www.nuget.org/packages/DemoFile/)
+- [DemoFile](https://www.nuget.org/packages/DemoFile/)- 
 - [DemoFile.Game.Cs](https://www.nuget.org/packages/DemoFile.Game.Cs)
 - [Concentus](https://www.nuget.org/packages/Concentus)
 - [NAudio](https://www.nuget.org/packages/NAudio)
 - [WindowsAPICodePackCore](https://www.nuget.org/packages/WindowsAPICodePackCore)
 - [WindowsAPICodePackShell](https://www.nuget.org/packages/WindowsAPICodePackShell)
+- [ReaLTaiizor](https://www.nuget.org/packages/ReaLTaiizor)
 
 ### 🔁 Transitive Dependencies
 
@@ -80,9 +76,11 @@ Here's what's next for the project:
 
 - Audio Voice Extractor ✔️
 - Audio Voice Player ✔️
-- Updater ✔️
-- Scale function ✔️
+- New GUI Design ✔️
 - Clean up code ✔️
+- Match-Results ✔️
+- New Parser ⏳
+- Full Match-Details ⏳
 - Find the match lobby using the demo ⏳
 - Video GUIDE ⏳
 
