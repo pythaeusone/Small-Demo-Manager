@@ -79,6 +79,7 @@ Here's what's next for the project:
 - New GUI Design ✔️
 - Clean up code ✔️
 - Match-Results ✔️
+- Custom Name CheckBox ⏳
 - New Parser ⏳
 - Full Match-Details ⏳
 - Find the match lobby using the demo ⏳
