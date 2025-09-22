@@ -136,8 +136,7 @@ I would also like to thank everyone who puts effort into raising awareness about
 
 You can also adjust the paths: one for your CS2 demo folder (it should look something like
 ..\Counter-Strike Global Offensive\game\csgo), and another for the folder where extracted audio files will be saved.
-
-You can also add the Small Demo Manager to the shell context menu. That way, you can simply right-click on a demo file to launch the manager, which will take you directly to the Bitfield Calc page.</value>
+</value>
   </data>
   <data name="LBL_GuideAudio.Text" xml:space="preserve">
     <value>Just like with the previous version, you can extract the in-game voice chat audio from demos recorded on SourceTV servers and copy the individual files to any folder you like. You can even double-click on a file to listen to it directly. Please note that demos from Premier and Competitive modes do not contain voice recordings.</value>
@@ -150,7 +149,7 @@ You can also add the Small Demo Manager to the shell context menu. That way, you
         AAEAAAD/////AQAAAAAAAAAMAgAAAEZTeXN0ZW0uV2luZG93cy5Gb3JtcywgQ3VsdHVyZT1uZXV0cmFs
         LCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5BQEAAAAmU3lzdGVtLldpbmRvd3MuRm9ybXMu
         SW1hZ2VMaXN0U3RyZWFtZXIBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAA0AoAAAJNU0Z0AUkBTAIBAQgB
-        AAFQAQMBUAEDARgBAAEYAQAE/wEZAQAI/wFCAU0BNgcAATYDAAEoAwABYAMAAUgDAAEBAQABGAYAAVH/
+        AAFYAQMBWAEDARgBAAEYAQAE/wEZAQAI/wFCAU0BNgcAATYDAAEoAwABYAMAAUgDAAEBAQABGAYAAVH/
         AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AMwAAw8G
         AAMPWgAqDx4ADw8SAA8PQgADEQYBAw8tAAMPJwADDyoAAw8YABUPDAAVDwwAJw8MAAMNBgADDy0AAw8n
         ADAPGAAGDwkABg8MAAYPCQAGDwkAAw8DASQPCQADDQwAAw4JADwPDwADDy0AAw8VAAYPCQAGDwwABg8J
