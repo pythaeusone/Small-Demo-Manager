@@ -30,9 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomInput));
             TB_Input = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            LBL_TBInfo = new ReaLTaiizor.Controls.MaterialLabel();
             BTN_OK = new ReaLTaiizor.Controls.MaterialButton();
             BTN_Cancle = new ReaLTaiizor.Controls.MaterialButton();
+            ComboBox_DemoFileNameOption = new ReaLTaiizor.Controls.MaterialComboBox();
             SuspendLayout();
             // 
             // TB_Input
@@ -67,21 +67,6 @@
             TB_Input.TrailingIcon = null;
             TB_Input.UseSystemPasswordChar = false;
             // 
-            // LBL_TBInfo
-            // 
-            LBL_TBInfo.AutoSize = true;
-            LBL_TBInfo.Depth = 0;
-            LBL_TBInfo.Enabled = false;
-            LBL_TBInfo.Font = new Font("Roboto", 12F, FontStyle.Regular, GraphicsUnit.Pixel);
-            LBL_TBInfo.FontType = ReaLTaiizor.Manager.MaterialSkinManager.FontType.Caption;
-            LBL_TBInfo.Location = new Point(25, 97);
-            LBL_TBInfo.Margin = new Padding(25, 5, 0, 0);
-            LBL_TBInfo.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            LBL_TBInfo.Name = "LBL_TBInfo";
-            LBL_TBInfo.Size = new Size(244, 14);
-            LBL_TBInfo.TabIndex = 1;
-            LBL_TBInfo.Text = "Your input will be added before the file name.";
-            // 
             // BTN_OK
             // 
             BTN_OK.AutoSize = false;
@@ -92,7 +77,7 @@
             BTN_OK.HighEmphasis = true;
             BTN_OK.Icon = null;
             BTN_OK.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            BTN_OK.Location = new Point(217, 121);
+            BTN_OK.Location = new Point(257, 114);
             BTN_OK.Margin = new Padding(0, 10, 20, 0);
             BTN_OK.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             BTN_OK.Name = "BTN_OK";
@@ -115,7 +100,7 @@
             BTN_Cancle.HighEmphasis = true;
             BTN_Cancle.Icon = null;
             BTN_Cancle.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            BTN_Cancle.Location = new Point(337, 121);
+            BTN_Cancle.Location = new Point(377, 114);
             BTN_Cancle.Margin = new Padding(0, 0, 60, 0);
             BTN_Cancle.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             BTN_Cancle.Name = "BTN_Cancle";
@@ -127,22 +112,47 @@
             BTN_Cancle.UseAccentColor = true;
             BTN_Cancle.UseVisualStyleBackColor = true;
             // 
+            // ComboBox_DemoFileNameOption
+            // 
+            ComboBox_DemoFileNameOption.AutoResize = false;
+            ComboBox_DemoFileNameOption.BackColor = Color.FromArgb(255, 255, 255);
+            ComboBox_DemoFileNameOption.Depth = 0;
+            ComboBox_DemoFileNameOption.DrawMode = DrawMode.OwnerDrawVariable;
+            ComboBox_DemoFileNameOption.DropDownHeight = 174;
+            ComboBox_DemoFileNameOption.DropDownStyle = ComboBoxStyle.DropDownList;
+            ComboBox_DemoFileNameOption.DropDownWidth = 121;
+            ComboBox_DemoFileNameOption.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            ComboBox_DemoFileNameOption.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            ComboBox_DemoFileNameOption.FormattingEnabled = true;
+            ComboBox_DemoFileNameOption.IntegralHeight = false;
+            ComboBox_DemoFileNameOption.ItemHeight = 43;
+            ComboBox_DemoFileNameOption.Items.AddRange(new object[] { "Expand original name", "Completely new name", "Keep original name" });
+            ComboBox_DemoFileNameOption.Location = new Point(20, 107);
+            ComboBox_DemoFileNameOption.Margin = new Padding(3, 10, 20, 3);
+            ComboBox_DemoFileNameOption.MaxDropDownItems = 4;
+            ComboBox_DemoFileNameOption.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            ComboBox_DemoFileNameOption.Name = "ComboBox_DemoFileNameOption";
+            ComboBox_DemoFileNameOption.Size = new Size(212, 49);
+            ComboBox_DemoFileNameOption.StartIndex = 0;
+            ComboBox_DemoFileNameOption.TabIndex = 4;
+            ComboBox_DemoFileNameOption.SelectedIndexChanged += ComboBox_DemoFileNameOption_SelectedIndexChanged;
+            // 
             // CustomInput
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(500, 175);
+            Controls.Add(ComboBox_DemoFileNameOption);
             Controls.Add(BTN_Cancle);
             Controls.Add(BTN_OK);
-            Controls.Add(LBL_TBInfo);
             Controls.Add(TB_Input);
             DrawerShowIconsWhenHidden = true;
             Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormStyle = ReaLTaiizor.Enum.Material.FormStyles.ActionBar_None;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
-            MaximumSize = new Size(500, 250);
+            MaximumSize = new Size(500, 175);
             MdiChildrenMinimizedAnchorBottom = false;
             MinimizeBox = false;
             MinimumSize = new Size(500, 175);
@@ -153,14 +163,13 @@
             Text = "New Filename";
             TopMost = true;
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
         private ReaLTaiizor.Controls.MaterialTextBoxEdit TB_Input;
-        private ReaLTaiizor.Controls.MaterialLabel LBL_TBInfo;
         private ReaLTaiizor.Controls.MaterialButton BTN_OK;
         private ReaLTaiizor.Controls.MaterialButton BTN_Cancle;
+        private ReaLTaiizor.Controls.MaterialComboBox ComboBox_DemoFileNameOption;
     }
 }

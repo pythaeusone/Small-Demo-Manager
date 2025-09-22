@@ -1,55 +1,89 @@
 ﻿using ReaLTaiizor.Forms;
 using ReaLTaiizor.Manager;
-using System.IO;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace SmallDemoManager.GUI
 {
     public partial class CustomInput : MaterialForm
     {
+        /// <summary>
+        /// Returns the user input from the TextBox.
+        /// </summary>
         public string InputText => TB_Input.Text;
+
+        /// <summary>
+        /// Returns the currently selected index of the ComboBox as string.
+        /// Default is "0".
+        /// </summary>
+        public string ComboBoxNumber { get; private set; } = "0";
 
         public CustomInput()
         {
             InitializeComponent();
 
-            // Dialog-Verhalten
+            // Configure dialog behavior
             BTN_OK.DialogResult = DialogResult.OK;
             BTN_Cancle.DialogResult = DialogResult.Cancel;
             AcceptButton = BTN_OK;
             CancelButton = BTN_Cancle;
             Sizable = false;
 
-            // Fokus + SelectAll beim Anzeigen
+            // Focus + SelectAll when the dialog is shown
             Shown += (_, __) => { TB_Input.Focus(); TB_Input.SelectAll(); };
 
-            // WICHTIG: Beim Skin-Manager registrieren, damit Styles greifen
+            // Register this form with the MaterialSkinManager so theme/styles are applied
             var mgr = MaterialSkinManager.Instance;
             mgr.AddFormToManage(this);
-            // Wenn du in der MainForm bereits Theme/ColorScheme gesetzt hast,
-            // brauchst du hier nichts weiter zu tun – der Manager ist singleton.
-            // OPTIONAL: Falls du sicher vom Owner übernehmen willst, nutze unten ShowInput(owner).
         }
 
-        // Bequemer statischer Aufruf mit Owner: übernimmt Theme/ColorScheme vom Owner-MaterialForm
-        public static string ShowInput(IWin32Window owner)
+        /// <summary>
+        /// Static helper to show the CustomInput dialog.
+        /// Returns an array:
+        /// [0] = user input text
+        /// [1] = ComboBox selected index (as string)
+        /// </summary>
+        public static string[] ShowInput(IWin32Window owner)
         {
             using var dlg = new CustomInput();
 
-            // Theme/ColorScheme explizit vom Owner übernehmen (falls Owner ein MaterialForm ist)
+            // Explicitly register with the manager if owner is also a MaterialForm
             if (owner is MaterialForm mf)
             {
                 var mgr = MaterialSkinManager.Instance;
-                // Schon registriert, aber sicher ist sicher:
                 mgr.AddFormToManage(dlg);
-                // Wenn du in deiner App mehrere Themes nutzt, kannst du hier gezielt übernehmen:
-                // mgr.Theme = mgr.Theme; // meist schon identisch
-                // mgr.ColorScheme = mgr.ColorScheme; // meist schon identisch
-                // In der Praxis reicht oft AddFormToManage(dlg).
             }
 
-            return dlg.ShowDialog(owner) == DialogResult.OK ? dlg.InputText : null;
+            // Return both input text and ComboBox index
+            string[] outputForInput =
+            {
+                dlg.ShowDialog(owner) == DialogResult.OK ? dlg.InputText : null,
+                dlg.ComboBoxNumber
+            };
+
+            return outputForInput;
+        }
+
+        /// <summary>
+        /// Event handler for ComboBox selection change.
+        /// Updates ComboBoxNumber with the selected index.
+        /// </summary>
+        private void ComboBox_DemoFileNameOption_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (sender is ComboBox combo)
+            {
+                ComboBoxNumber = combo.SelectedIndex.ToString();
+
+                if (combo.SelectedIndex == 2)
+                {
+                    TB_Input.Enabled = false;
+                    TB_Input.Text = "Original";
+                }
+                else
+                {
+                    TB_Input.Enabled = true;
+                    TB_Input.Text = "";
+                }
+            }
         }
     }
 }

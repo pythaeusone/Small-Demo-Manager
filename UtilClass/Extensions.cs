@@ -242,21 +242,39 @@ namespace SmallDemoManager.UtilClass
 
             while (true)
             {
-                // Prompt the user for a new filename (without extension)
-                //string userInput = Microsoft.VisualBasic.Interaction.InputBox(
-                //    "Please enter the new filename (without extension):",
-                //    "New Filename",
-                //    defaultName
-                //);
+                // Show custom dialog: [0] = textbox input, [1] = combobox index
+                string[] userInput = CustomInput.ShowInput(owner);
 
-                string userInput = CustomInput.ShowInput(owner);
-
-                // If the user cancels or submits an empty name, abort
-                if (string.IsNullOrWhiteSpace(userInput))
+                // If user cancels or text is empty, abort
+                if (string.IsNullOrWhiteSpace(userInput[0]))
                     return null;
 
-                // Write the new name at the beginning and keep the original ones at the End.
-                string newFileNameCombo = userInput + "_-_" + defaultName;
+                string inputText = userInput[0];
+                string comboIndex = userInput[1];
+                string newFileNameCombo;
+
+                switch (comboIndex)
+                {
+                    case "0":
+                        // Prefix new text and keep original at the end
+                        newFileNameCombo = inputText + "_-_" + defaultName;
+                        break;
+
+                    case "1":
+                        // Completely new name from input
+                        newFileNameCombo = inputText;
+                        break;
+
+                    case "2":
+                        // Keep original name
+                        newFileNameCombo = defaultName;
+                        break;
+
+                    default:
+                        // Fallback: keep original name
+                        newFileNameCombo = defaultName;
+                        break;
+                }
 
                 // Ensure the filename ends with .dem
                 string newFileName = Path.ChangeExtension(newFileNameCombo, ".dem");
@@ -267,7 +285,11 @@ namespace SmallDemoManager.UtilClass
                 // If a file with that name already exists, warn and retry
                 if (File.Exists(destinationPath))
                 {
-                    MaterialUiHelper.ShowLongMessageBox($"Name Already Taken", "A file with this name already exists. Please choose a different name.", MessageBoxButtons.OK);
+                    MaterialUiHelper.ShowLongMessageBox(
+                        "Name Already Taken",
+                        "A file with this name already exists. Please choose a different name.",
+                        MessageBoxButtons.OK
+                    );
                     continue;
                 }
 
@@ -279,7 +301,11 @@ namespace SmallDemoManager.UtilClass
                 }
                 catch (Exception ex)
                 {
-                    MaterialUiHelper.ShowLongMessageBox($"Error", $"Error while moving/renaming the file:\n{ex.Message}", MessageBoxButtons.OK);
+                    MaterialUiHelper.ShowLongMessageBox(
+                        "Error",
+                        $"Error while moving/renaming the file:\n{ex.Message}",
+                        MessageBoxButtons.OK
+                    );
                     return null;
                 }
             }
